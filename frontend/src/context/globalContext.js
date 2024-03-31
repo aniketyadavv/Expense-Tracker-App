@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react"
 import axios from 'axios'
 
@@ -17,6 +16,7 @@ export const GlobalProvider = ({ children }) => {
     //calculate incomes
     const addIncome = async (income) => {
         const response = await axios.post(`${BASE_URL}add-income`, income)
+            // addIncome(response)
             .catch((err) => {
                 setError(err.response.data.message)
             })
@@ -44,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
 
-    //calculate expenses
+    //calculate incomes
     const addExpense = async (income) => {
         const response = await axios.post(`${BASE_URL}add-expense`, income)
             .catch((err) => {
